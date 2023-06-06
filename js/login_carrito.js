@@ -8,13 +8,18 @@
 
 alert("Bienvenid@ a #ColorPaint \nPrecione aceptar para ingresar su usuario y contraseña")
 
+let userOK = "admin"
+let passOK = "pintura2023"
 let prod1 = 0
 let prod2 = 0
 let prod3 = 0
 let prod4 = 0
 
+
 let user = prompt('Ingrese su usuario y precione aceptar')
 let pass = prompt('Ingrese su contraseña y precione aceptar')
+
+
 
 function seleccion(opc) {
     switch (opc) {
@@ -44,7 +49,7 @@ function seleccion(opc) {
     }
 }
 
-if ((user === "admin") && (pass === "pintura2023")) {
+if ((user === userOK) && (pass === passOK)) {
     alert('Login ok, user: ' + user + "\nprecione aceptar para seleccionar sus productos")
     let prod = prompt('Ingrese la opción para agregar al carrito segun corresponda: \n# 1 - Pinturas nacionales\n# 2 - Pinturas importadas\n# 3 - Pinceles\n# 4 - Accesorios\n# 0 - Cerra compra')
     console.log(prod)
@@ -63,9 +68,9 @@ if ((user === "admin") && (pass === "pintura2023")) {
         alert("Gracias por su visita")
     }
 
-} else if ((user !== "admin") && (pass === "pintura2023")) {
+} else if ((user !== userOK) && (pass === passOK)) {
     alert('Error el usuario ingresado es incorrecto');
-} else if ((user === "admin") && (pass !== "pintura2023")) {
+} else if ((user === userOK) && (pass !== passOK)) {
     alert('Error la contraseña ingresada es incorrecta');
 } else {
     alert('Error el usuario y la contraseña son incorrectos');
