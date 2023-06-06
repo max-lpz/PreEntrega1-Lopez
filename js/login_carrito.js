@@ -18,9 +18,6 @@ let pass = prompt('Ingrese su contraseña y precione aceptar')
 
 function seleccion(opc) {
     switch (opc) {
-        case "0":
-            alert("Finalizo")
-            break;
         case "1":
             prod1++
             alert(`Agregaste al carrito: ${prod1} Pintura/s nacional`)
@@ -38,15 +35,19 @@ function seleccion(opc) {
             alert(`Agregaste al carrito: ${prod4} Accesorio/s`)
             break;
         default:
-            alert(`La opcion ${opc} no es una opción valida`)
+            if (opc != null || opc != undefined) {
+                alert(`La opcion ${opc} no es una opción valida`)
+            } else {
+                alert('Para salir debe ingresar la opción "0" (Cero)')
+            }
             break;
     }
 }
 
 if ((user === "admin") && (pass === "pintura2023")) {
     alert('Login ok, user: ' + user + "\nprecione aceptar para seleccionar sus productos")
-
     let prod = prompt('Ingrese la opción para agregar al carrito segun corresponda: \n# 1 - Pinturas nacionales\n# 2 - Pinturas importadas\n# 3 - Pinceles\n# 4 - Accesorios\n# 0 - Cerra compra')
+    console.log(prod)
     while (prod != 0) {
         seleccion(prod)
         prod = prompt('Ingrese la opción para agregar al carrito segun corresponda: \n# 1 - Pinturas nacionales\n# 2 - Pinturas importadas\n# 3 - Pinceles\n# 4 - Accesorios\n# 0 - Cerra compra')
@@ -58,6 +59,8 @@ if ((user === "admin") && (pass === "pintura2023")) {
         alert("Cantidad total de productos: " + total)
         alert(`Cantidad de Pinturas nacionales: ${prod1}\nCantidad de Pinturas importadas: ${prod2}\nCantidad de Pinceles: ${prod3}\nCantidad de Accesorios: ${prod4}`)
         alert("gracias por su compra!")
+    } else {
+        alert("Gracias por su visita")
     }
 
 } else if ((user !== "admin") && (pass === "pintura2023")) {
