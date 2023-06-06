@@ -16,7 +16,7 @@ let prod4 = 0
 let user = prompt('Ingrese su usuario y precione aceptar')
 let pass = prompt('Ingrese su contraseña y precione aceptar')
 
-if (user.includes("admin") & pass.includes("pintura2023")) {
+if ((user === "admin") && (pass === "pintura2023")) {
     alert('Login ok, user: ' + user + "\nprecione aceptar para seleccionar sus productos")
 
 function seleccion() {
@@ -62,9 +62,9 @@ if (total != 0) {
     alert("gracias por su compra!")
 }
 
-} else if (!user.includes("admin") & pass.includes("pintura2023")) {
+} else if ((user !== "admin") && (pass === "pintura2023")) {
     alert('Error el usuario ingresado es incorrecto');
-} else if (user.includes("admin") & !pass.includes("pintura2023")) {
+} else if ((user === "admin") && (pass !== "pintura2023")) {
     alert('Error la contraseña ingresada es incorrecta');
 } else {
     alert('Error el usuario y la contraseña son incorrectos');
