@@ -8,18 +8,15 @@
 
 alert("Bienvenid@ a #ColorPaint \nPrecione aceptar para ingresar su usuario y contraseña")
 
-let userOK = "admin"
-let passOK = "pintura2023"
+let userOK = "1"
+let passOK = "1"
 let prod1 = 0
 let prod2 = 0
 let prod3 = 0
 let prod4 = 0
 
-
 let user = prompt('Ingrese su usuario y precione aceptar')
 let pass = prompt('Ingrese su contraseña y precione aceptar')
-
-
 
 function seleccion(opc) {
     switch (opc) {
